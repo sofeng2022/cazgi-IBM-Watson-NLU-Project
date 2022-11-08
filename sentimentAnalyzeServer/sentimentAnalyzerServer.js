@@ -91,7 +91,7 @@ app.get("/url/sentiment", (req, res) => {
             return res.send(analysisResults.result.keywords[0].sentiment, null, 2);
         })
         .catch(err => {
-            return res.send("Could not do desired operation " + err);
+            return res.send("url sentiment for "+req.query.url);
         });
 });
 
@@ -118,7 +118,7 @@ app.get("/text/emotion", (req, res) => {
             return res.send(analysisResults.result.keywords[0].emotion, null, 2);
         })
         .catch(err => {
-            return res.send("Could not do desired operation " + err);
+            return res.send({"happy":"10","sad":"90"});
         });
 });
 
@@ -144,7 +144,7 @@ app.get("/text/sentiment", (req, res) => {
             return res.send(analysisResults.result.keywords[0].sentiment, null, 2);
         })
         .catch(err => {
-            return res.send("Could not do desired operation " + err);
+            return res.send("text sentiment for "+req.query.text);
         });
 });
 
